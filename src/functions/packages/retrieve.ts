@@ -1,9 +1,19 @@
-import { sendRequest, HttpRequestMethods } from "../sendRequest";
+import { HttpRequestMethods, sendRequest } from "../sendRequest";
 
 export async function retrievePackages() {
   return await sendRequest<RetrievePackagesResponse>(
     HttpRequestMethods.GET,
     ["packages"],
+    {
+      passToken: true,
+    },
+  );
+}
+
+export async function retrievePackage(packageId: number) {
+  return await sendRequest<any>(
+    HttpRequestMethods.GET,
+    ["packages", String(packageId)],
     {
       passToken: true,
     },

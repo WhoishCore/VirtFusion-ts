@@ -14,8 +14,8 @@ import {
 } from "./functions/hypervisors";
 import {
   type AddIpBlockIpv4Options,
-  type IpBlockListOptions,
   addIpBlockIpv4,
+  type IpBlockListOptions,
   listIpBlocks,
   retrieveIpBlock,
 } from "./functions/ipBlocks";
@@ -31,24 +31,19 @@ import { retrieveQueueItem } from "./functions/queue";
 import {
   type AddUserCreditOptions,
   type AddUserResourcePackOptions,
-  type DeleteResourcePackServersOptions,
-  type DeleteUserResourcePackOptions,
-  type GetUserResourcePackOptions,
-  type ModifyUserAccessOptions,
-  type ModifyUserResourcePackOptions,
-  type SelfServiceExtRelationOptions,
-  type SelfServiceProfileOptions,
-  type SelfServiceReportOptions,
-  type SelfServiceStatsOptions,
-  type SetUserHourlyResourcePackOptions,
   addUserCredit,
   addUserHourlyGroupProfile,
   addUserResourceGroupProfile,
   addUserResourcePack,
   cancelUserCredit,
+  type DeleteResourcePackServersOptions,
+  type DeleteUserResourcePackOptions,
   deleteResourcePackServers,
   deleteUserResourcePack,
+  type GetUserResourcePackOptions,
   getUserResourcePack,
+  type ModifyUserAccessOptions,
+  type ModifyUserResourcePackOptions,
   modifyUserAccess,
   modifyUserResourcePack,
   removeUserHourlyGroupProfile,
@@ -57,6 +52,11 @@ import {
   retrieveHourlyStatsByUserExtRelationId,
   retrieveReportByUserExtRelationId,
   retrieveUsageByUserExtRelationId,
+  type SelfServiceExtRelationOptions,
+  type SelfServiceProfileOptions,
+  type SelfServiceReportOptions,
+  type SelfServiceStatsOptions,
+  type SetUserHourlyResourcePackOptions,
   setUserHourlyResourcePack,
   suspendResourcePackServers,
   unsuspendResourcePackServers,
@@ -65,19 +65,17 @@ import { type BuildOptions, buildServer } from "./functions/servers/build";
 import { type CreateOptions, createServer } from "./functions/servers/create";
 import { deleteServer } from "./functions/servers/delete";
 import {
-  type FirewallRulesOptions,
-  type FirewallSyncOptions,
   applyServerFirewallRules,
   disableServerFirewall,
   enableServerFirewall,
+  type FirewallRulesOptions,
+  type FirewallSyncOptions,
   retrieveServerFirewall,
 } from "./functions/servers/firewall";
 import { type ListOptions, listServer } from "./functions/servers/list";
 import {
   type BackupManagerAccessOptions,
   type CustomXmlOptions,
-  type ThrottleCpuOptions,
-  type VncOptions,
   changeServerOwner,
   changeServerPackage,
   createServerVnc,
@@ -85,25 +83,27 @@ import {
   modifyServerCpuCores,
   modifyServerMemory,
   modifyServerName,
+  retrieveServersByUser,
   retrieveServerTemplates,
   retrieveServerVnc,
-  retrieveServersByUser,
   suspendServer,
+  type ThrottleCpuOptions,
   throttleServerCpu,
   unsuspendServer,
   updateServerBackupPlan,
   updateServerCustomXml,
+  type VncOptions,
 } from "./functions/servers/management";
 import {
   type AddIpv4QuantityOptions,
-  type DeleteNetworkWhitelistOptions,
-  type Ipv4Options,
-  type NetworkWhitelistOptions,
   addServerIpv4,
   addServerIpv4Quantity,
   addServerNetworkWhitelist,
+  type DeleteNetworkWhitelistOptions,
   deleteServerIpv4,
   deleteServerNetworkWhitelist,
+  type Ipv4Options,
+  type NetworkWhitelistOptions,
 } from "./functions/servers/network";
 import { type ServerPowerAction, serverPower } from "./functions/servers/power";
 import {
@@ -113,12 +113,12 @@ import {
 import { retrieveServer } from "./functions/servers/retrieve";
 import { retrieveServerTraffic } from "./functions/servers/traffic";
 import {
-  type ModifyTrafficOptions,
-  type TrafficBlockOptions,
   addServerTrafficBlock,
   deleteServerTrafficBlock,
+  type ModifyTrafficOptions,
   modifyServerTraffic,
   retrieveServerTrafficBlocks,
+  type TrafficBlockOptions,
 } from "./functions/servers/trafficBlocks";
 import { type AddOptions, addSshKey } from "./functions/sshKeys/add";
 import { deleteSshKey } from "./functions/sshKeys/delete";
@@ -126,15 +126,15 @@ import { retrieveSshKey } from "./functions/sshKeys/retrieve";
 import { retrieveUserSshKeys } from "./functions/sshKeys/retrieveByUser";
 import {
   type CreateUserOptions,
-  type ModifyUserOptions,
-  type UserExtRelationOptions,
   createUser,
   deleteUserByExtRelationId,
   generateUserLoginTokensByExtRelationId,
   generateUserLoginTokensByServerId,
+  type ModifyUserOptions,
   modifyUserByExtRelationId,
   resetUserPasswordByExtRelationId,
   retrieveUserByExtRelationId,
+  type UserExtRelationOptions,
 } from "./functions/users";
 
 export class VirtFusionV1 {

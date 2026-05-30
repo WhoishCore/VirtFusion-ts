@@ -10,7 +10,12 @@ export async function listServer(
     limit: 20,
   },
 ) {
-  const { responseType, page, limit, hypervisorId } = options;
+  const {
+    responseType = "simple",
+    page = 1,
+    limit = 20,
+    hypervisorId,
+  } = options;
 
   if (!isInteger(page) || page < 1) {
     throw new CustomError({

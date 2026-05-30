@@ -12,7 +12,9 @@
       "require": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "prepack": "pnpm build",
@@ -23,7 +25,13 @@
     "type": "git",
     "url": "git+https://github.com/WhoishCore/VirtFusion-ts.git"
   },
-  "keywords": ["VirtFusion", "api", "typescript", "async", "promise"],
+  "keywords": [
+    "VirtFusion",
+    "api",
+    "typescript",
+    "async",
+    "promise"
+  ],
   "author": "whoish",
   "license": "GPL-3.0",
   "bugs": {
@@ -39,21 +47,21 @@
     "access": "public"
   },
   "dependencies": {
-    "axios": "^1.7.9",
-    "lodash": "^4.17.21",
+    "axios": "^1.16.1",
+    "lodash": "^4.18.1",
     "url-join-ts": "^1.0.5"
   },
   "devDependencies": {
-    "@swc/core": "^1.10.1",
-    "@biomejs/biome": "^1.9.4",
-    "@types/lodash": "^4.17.13",
-    "@types/node": "^22.10.1",
+    "@biomejs/biome": "^2.4.16",
+    "@swc/core": "^1.15.40",
+    "@types/lodash": "^4.17.24",
+    "@types/node": "^25.9.1",
     "@types/tcp-ping": "^0.1.6",
     "tcp-ping": "^0.1.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2"
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
   },
   "_moduleAliases": {
     "types": "./dist/types",

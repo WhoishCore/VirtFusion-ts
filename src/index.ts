@@ -1,5 +1,4 @@
-import isBoolean from "lodash/isBoolean";
-import isString from "lodash/isString";
+import lodash from "lodash";
 
 import { retrieveServerBackups } from "./functions/backups";
 import { retrieveDnsService } from "./functions/dns";
@@ -136,6 +135,8 @@ import {
   retrieveUserByExtRelationId,
   type UserExtRelationOptions,
 } from "./functions/users";
+
+const { isBoolean, isString } = lodash;
 
 export class VirtFusionV1 {
   private static initialized = false;

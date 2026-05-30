@@ -1,5 +1,7 @@
-import lodashIsFinite from "lodash/isFinite";
+import lodash from "lodash";
 import tcpp from "tcp-ping";
+
+const { isFinite: lodashIsFinite } = lodash;
 
 interface PingResult extends tcpp.Result {
   alive: boolean;

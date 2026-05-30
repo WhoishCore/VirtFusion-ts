@@ -292,7 +292,7 @@ function statsQuery(options: SelfServiceStatsOptions) {
   const { period, ...rest } = options;
   return {
     ...extRelationQuery(rest),
-    "period[]": period,
+    ...(period === undefined ? {} : { "period[]": period }),
   };
 }
 

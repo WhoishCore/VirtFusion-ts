@@ -1,5 +1,6 @@
-// biome-ignore lint/suspicious/noShadowRestrictedNames:
-import isNaN from "lodash/isNaN";
+import lodash from "lodash";
+
+const { isNaN: lodashIsNaN } = lodash;
 
 export function stringify(
   obj: any,
@@ -28,7 +29,7 @@ export function stringify(
       if (preserveUndefined && value === undefined) {
         return useOriginalUndefined ? "undefined" : "__undefined__";
       }
-      if (preserveNaN && typeof value === "number" && isNaN(value)) {
+      if (preserveNaN && typeof value === "number" && lodashIsNaN(value)) {
         return useOriginalNaN ? "NaN" : "__NaN__";
       }
       return value;

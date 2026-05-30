@@ -1,9 +1,10 @@
-import isEmpty from "lodash/isEmpty";
-import isInteger from "lodash/isInteger";
+import lodash from "lodash";
 
 import { CustomError } from "modules/customError";
 import { isSshPublicKey } from "modules/isSshPublicKey";
 import { HttpRequestMethods, sendRequest } from "../sendRequest";
+
+const { isEmpty, isInteger } = lodash;
 
 export async function addSshKey(addOptions: AddOptions) {
   const { userId, name, publicKey } = addOptions;

@@ -1,7 +1,9 @@
-import isInteger from "lodash/isInteger";
+import lodash from "lodash";
 
 import { CustomError } from "modules/customError";
 import { HttpRequestMethods, sendRequest } from "../sendRequest";
+
+const { isInteger } = lodash;
 
 export async function retrieveServer(serverId: number) {
   if (!isInteger(serverId)) {

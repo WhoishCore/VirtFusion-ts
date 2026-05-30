@@ -1,10 +1,11 @@
 import axios from "axios";
-import { urlJoin } from "url-join-ts";
-
-import { object } from "modules/object";
+import lodash from "lodash";
 import { CustomError } from "modules/customError";
+import { object } from "modules/object";
+import { urlJoin } from "url-join-ts";
 import { VirtFusionV1 } from "..";
-import { isArray } from "lodash";
+
+const { isArray } = lodash;
 
 export async function sendRequest<ResponseType>(
   method: HttpRequestMethods,
@@ -48,7 +49,7 @@ export async function sendRequest<ResponseType>(
       data,
     } as Promise<ResponseType>;
   } catch (error) {
-    if (error?.response) {
+    if (axios.isAxiosError(error) && error.response) {
       throw new CustomError(
         {
           errorMessage: error.response.data.msg,
@@ -57,7 +58,9 @@ export async function sendRequest<ResponseType>(
         error.response.status,
       );
     }
-    throw new CustomError({ errorMessage: error.message });
+    throw new CustomError({
+      errorMessage: error instanceof Error ? error.message : String(error),
+    });
   }
 }
 

@@ -1,7 +1,9 @@
-import isInteger from "lodash/isInteger";
+import lodash from "lodash";
 
 import { CustomError } from "modules/customError";
 import { HttpRequestMethods, sendRequest } from "../sendRequest";
+
+const { isInteger } = lodash;
 
 export async function listServer(
   options: ListOptions = {
@@ -31,21 +33,23 @@ export async function listServer(
     });
   }
 
-  if (!isInteger(hypervisorId)) {
+  if (hypervisorId !== undefined && !isInteger(hypervisorId)) {
     throw new CustomError({
       errorMessage: "Hypervisor ID must be an integer",
       errorObject: { hypervisorId },
     });
   }
 
+  const query = {
+    type: responseType,
+    page,
+    results: limit,
+    ...(hypervisorId === undefined ? {} : { hypervisorId }),
+  };
+
   return await sendRequest<any>(HttpRequestMethods.GET, ["servers"], {
     passToken: true,
-    query: {
-      type: responseType,
-      page: page,
-      results: limit,
-      hypervisorId,
-    },
+    query,
   });
 }
 

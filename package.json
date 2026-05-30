@@ -1,6 +1,6 @@
 {
   "name": "virtfusion-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A client for VirtFusion API. Built with TypeScript.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

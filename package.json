@@ -1,6 +1,6 @@
 {
   "name": "virtfusion-ts",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A client for VirtFusion API. Built with TypeScript.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -18,8 +18,7 @@
   "scripts": {
     "build": "tsup",
     "prepack": "pnpm build",
-    "prepublishOnly": "pnpm build",
-    "setup-dev": "git clone git@github.com:Lazco-Studio/VirtFusion-Test.git ../VirtFusion-Test"
+    "prepublishOnly": "pnpm build"
   },
   "repository": {
     "type": "git",
@@ -32,7 +31,10 @@
     "async",
     "promise"
   ],
-  "author": "whoish",
+  "author": "Alex Liao, Lazco Corporation",
+  "contributors": [
+    "whoish"
+  ],
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/WhoishCore/VirtFusion-ts/issues"

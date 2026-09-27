@@ -3,6 +3,8 @@
 
 A TypeScript client for interacting with the VirtFusion API. Maintained by [Whoish](https://www.npmjs.com/~whoish).
 
+This package is a modified version of [Lazco-Corporation/VirtFusion](https://github.com/Lazco-Corporation/VirtFusion), originally built by Alex Liao for Lazco Corporation (formerly Lazco Studio LTD.). Whoish began modifying it on 2026-05-27. It remains licensed under GPL-3.0; see [LICENSE](LICENSE).
+
 ## Installation
 Install the package using `pnpm`:
 ```bash
